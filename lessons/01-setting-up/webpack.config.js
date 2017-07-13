@@ -2,7 +2,8 @@ module.exports = {
   entry: './index.js',
 
   output: {
-    filename: 'bundle.js',
+    filename: 'foo.js',
+    // NOTE bundle.js is never written to disk, by design of webpack-dev-server
     publicPath: ''
   },
 
