@@ -8,8 +8,8 @@ export default React.createClass({
         <h1>React Router Tutorial</h1>
         <ul role="nav">
           {/* NOTE activated Link will be red, which is smarter than Link */}
-          <li><Link to="/about" activeStyle={{ color: 'red' }}>About</Link></li>
-          <li><Link to="/repos" activeStyle={{ color: 'red' }}>Repos</Link></li>
+          <li><Link to="/about" activeClassName="activated">About</Link></li>
+          <li><Link to="/repos" activeClassName="activated">Repos</Link></li>
         </ul>
         {this.props.children}
       </div>
