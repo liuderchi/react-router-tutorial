@@ -1,8 +1,10 @@
 // server.js
 var express = require('express')
 var path = require('path')
+var compression = require('compression')
 
 var app = express()
+app.use(compression())   // enable gzip compression to response
 
 // serve our static stuff like index.css
 app.use(express.static(path.join(__dirname, 'public')))
