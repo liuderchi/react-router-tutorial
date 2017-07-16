@@ -1,6 +1,5 @@
 import React from 'react'
 import NavLink from './NavLink'
-import { browserHistory } from 'react-router'
 
 export default React.createClass({
   handleSubmit(event) {
@@ -9,8 +8,12 @@ export default React.createClass({
     const repo = event.target.elements[1].value
     const path = `/repos/${userName}/${repo}`
     // NOTE handle page navigation programatically
-    browserHistory.push(path)
-    // NOTE browserHistory should be singleton
+    this.context.router.push(path)
+    // NOTE context.router is available by referencing browserHistory in Router
+  },
+  // ask for `router` from context for naviation programatically
+  contextTypes: {
+    router: React.PropTypes.object
   },
   render() {
     return (
